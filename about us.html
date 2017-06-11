@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" href="about.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+        <script>
+        var imagecount = 1;
+        var totalimages = 4;
+
+        function slideright(x){
+                var image = document.getElementById("img"); 
+                imagecount = imagecount + x;
+                if (imagecount > totalimages) imagecount = 1;
+                if (imagecount < 1) imagecount = totalimages;
+                image.src = "images/img"+ imagecount +".jpg";       
+        }
+
+        function slideleft(x){
+                var image = document.getElementById("img"); 
+                imagecount = imagecount + x;
+                if (imagecount > totalimages) imagecount = 1;
+                if (imagecount < 1) imagecount = totalimages;
+                image.src = "images/img"+ imagecount +".jpg";      
+        }
+
+        setInterval(function slideA(){
+                var image = document.getElementById("img"); 
+                imagecount = imagecount + 1;
+                if (imagecount > totalimages) imagecount = 1;
+                if (imagecount < 1) imagecount = totalimages;
+                image.src = "images/img"+ imagecount +".jpg";       
+        },5000);
+    </script>
+    <div class="header">
+        <div class="header">
+        <div class="logo">
+            <img src="images/car logo.png"/>
+        </div>
+        <div>
+            <marquee>WELCOME TO MAXIMUS AUTO-SALES WEBSITES DEALS IN ALL KINDS OF CARS.</marquee>
+        </div>
+        <div class="list">
+            <ul class="list 2">
+            <li class="li 2"><a class="li" href="index.html">HOME</a></li>
+            <li class="li 2"><a class="li" href="about us.html">ABOUT US</a></li>
+            <li class="li 2"><a class="li" href="reviews.html">REVIEWS</a></li>
+            <li class="li 2"><a class="li" href="contact.html">CONTACT</a></li>
+            <li class="li 2"><a class="li" href="cart.html" id="countitems" ><i class='fa fa-shopping-cart' aria-hidden='true'></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div onclick="slideright(1);" class="fa fa-chevron-circle-left" id="rightarrow"></div>
+    <div onclick="slideleft(-1);" class="fa fa-chevron-circle-right" id="leftarrow"></div>
+    <div >
+        <img src="images/img1.jpg" class="big-img" id="img"/>
+    </div>
+    <div class="containor">
+        <center>
+        <h1 class="head">About Us</h1>
+        <div>
+            <img src="images/about logo.png" width="20%" height="200px"/>
+        </div>
+        <hr  class="line"/>
+        </center>
+        <div class="para-1">
+        <h1>Personal Summary</h1>
+        <p>An ambitious, determined and self-motivated Car Sales Executive who is able to talk to people, build a genuine rapport with them, and identify exactly what it is that they want from a car. Karen has a track record of exceeding her customers’ expectations in every element of their buying experience. She always comes across as a genuine person who is able to recommend the right vehicles for her clients. Possessing a professional appearance and exceptional work ethic, she will be able to hit the ground running in any busy car showroom. Right now she is looking to join a dealership that offers its employees a competitive basic salary, excellent commission structure and the use of a company car.</p>
+        </div>
+        <div class="para-2">
+        <h1>Career History</h1>
+         CAR SALES EXECUTIVE – January 2010 - present Employers name - Coventry<br /> Responsible for selling the maximum number of vehicles possible at optimum profit.<br /> Also in charge of building relationships with customers and generating new business through<br /> marketing available extras, accessories and value added products.   
+        <ol>
+         Duties<br />
+         Selling both new and used cars as well as finance and related product.<br />
+         Selling and promoting Finance, Insurance products and Paint Protection.<br />
+         Demonstrating vehicles to customers, including taking them for drives.<br />
+         Reporting to the vehicle Sales Manager on activities, reviews and analyses.<br />
+         Meeting customers face to face and holding sales discussions with them.<br />
+         Writing up sales contracts.<br />
+         Representing the company at trade exhibitions, events and demonstrations.<br />
+         Negotiating the terms of a sales agreement and closing sales.<br />
+         Following-up in-bound telephone enquiries, walk in prospects and emails enquiries.<br />
+         Arranging appointments via Internet Leads.<<br />>
+         Preparing car purchase packages.<br />
+         Cold calling up qualified sales prospects.<br />
+         Delivering vehicles to customers.<br />
+         Liaising with the showroom body shop to ensure that vehicle repairs are carried out quickly.<br />
+     TRAINEE CAR SALES EXECUTIVE – May 2008 - January 2010 Employers name - Birmingham
+    </div>
+    <div class="para-3">
+     <h1>Key Skills And Competencies</h1>
+         Sales<br />
+         An ability to achieve and exceed targets.<br />
+         Able to work as part of a busy sales team.<br />
+         Ability to build a rapport with a wide range of people.<br />
+         Ability to prioritize and meet deadlines on multiple assignments.<br />
+         Previous related retail experience.<br />
+         Personal<br />
+         Strong leadership, communication and organisational skills.<br />
+         A valid driver's license & satisfactory driving record.<br />
+         Unlimited resilience, drive, energy and talent.<br /> 
+    </div>
+    <div class="para-4">
+     <h1>Refrences</h1>
+     <p>Available on request</p>
+    </div>
+    </div>
+     <div class="footer">
+       <div class="last-call">
+       <div class="icons">
+         <img class="call-image" src="images/image 11.png" height="60px" width="60px"/>
+         <p class="p1"><b>Call</b> <br /> 03049260561</p>
+       </div>
+       <div class="icons2">
+           <img class="call-image2" src="images/image 12.png" width="60px" height="60px"/>
+           <p class="p2"><b>Contact</b><br /><a  id="email" href="mailto:shayanjob20@gmail.com">shayanjob20@gmail.com</a> </p>
+       </div>
+       <div>
+           <img class="call-image3" src="images/image 13.gif" height="60px" width="60px"/>
+           <p class="p3"><b>Follow me</b><br />
+            <a href="https://www.facebook.com"><img class="call-image4" src="images/image 16.png" /></a>
+            <a href="https://www.linkedin.com/m/login/"><img class="call-image5" src="images/image 15.png" alt=""/></a>
+            <a href="https://plus.google.com/u/0/collections/"><img class="call-image6" src="images/image 14.png" alt=""/></a>
+            </p>
+       </div>
+     </div>
+    </div>
+</body>
+</html>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <script>
+        var imagecount = 1;
+        var totalimages = 4;
+
+        function slideright(x){
+                var image = document.getElementById("img"); 
+                imagecount = imagecount + x;
+                if (imagecount > totalimages) imagecount = 1;
+                if (imagecount < 1) imagecount = totalimages;
+                image.src = "images/img"+ imagecount +".jpg";       
+        }
+
+        function slideleft(x){
+                var image = document.getElementById("img"); 
+                imagecount = imagecount + x;
+                if (imagecount > totalimages) imagecount = 1;
+                if (imagecount < 1) imagecount = totalimages;
+                image.src = "images/img"+ imagecount +".jpg";      
+        }
+
+        setInterval(function slideA(){
+                var image = document.getElementById("img"); 
+                imagecount = imagecount + 1;
+                if (imagecount > totalimages) imagecount = 1;
+                if (imagecount < 1) imagecount = totalimages;
+                image.src = "images/img"+ imagecount +".jpg";       
+        },5000);
+    </script>
+    <div class="header">
+        <div class="logo">
+            <img src="images/car logo.png"/>
+        </div>
+        <div>
+            <marquee>WELCOME TO MAXIMUS AUTO-SALES WEBSITES DEALS IN ALL KINDS OF CARS.</marquee>
+        </div>
+        <div class="list">
+            <ul class="list 2">
+            <li class="li 2"><a class="li" href="index.html">HOME</a></li>
+            <li class="li 2"><a class="li" href="about us.html">ABOUT US</a></li>
+            <li class="li 2"><a class="li" href="reviews.html">REVIEWS</a></li>
+            <li class="li 2"><a class="li" href="contact.html">CONTACT</a></li>
+            <li class="li 2"><a class="li" href="cart.html" id="countitems" ><i class='fa fa-shopping-cart'  aria-hidden='true'></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div onclick="slideright(1);" class="fa fa-chevron-circle-left" id="rightarrow"></div>
+    <div onclick="slideleft(-1);" class="fa fa-chevron-circle-right" id="leftarrow"></div>
+    <div>
+        <img src="images/img1.jpg" class="big-img" id="img"/>
+    </div>
+    <div class="main-containor">
+        <div class="icon-img">
+            <img src="images/cart.png" width="8%" height="100px"  />
+        </div>
+        <div>
+            <h1>Shopping Cart</h1>
+        </div>
+        <div id="maindiv">
+            <table id="tb1">
+                 <tr>
+                     <th>Image</th>
+                     <th>Name</th>
+                     <th>Quantity</th>
+                     <th>Price</th>
+                     <th>Delete</th>
+                 </tr>
+            </table>
+        </div>
+        <div>
+            <button class="order" onclick="placeOrder()">Order Now</button>
+        </div>
+    </div>
+    <script>
+
+    var cars = localStorage.getItem("countitems") || [];
+    cars.length > 0 ? cars = JSON.parse(cars) : false;
+    var carlistitems = cars;
+    if (!cars.length) {
+        document.getElementById("maindiv").innerHTML = "<b>No car selected!!</b>"
+    }
+    var totalItems = 0;
+    var totolPrice = 0;
+    submitvalue();
+    function submitvalue() {
+        for (var i = 0; i < cars.length; i++) {
+            console.log(cars[i]);
+            document.getElementById("tb1").innerHTML += "<tr><td><img class='images' src='images/" + cars[i].image + "'/></td><td>" + cars[i].name + "</td><td>" + cars[i].quantity + "</td><td>" + cars[i].price * cars[i].quantity + "/-</td><td><button class='button' onclick='decrementItem(" + i +")'>Delete</button></td></tr>";
+            totalItems += cars[i].quantity;
+            totolPrice += cars[i].quantity * cars[i].price;            
+    }
+        document.getElementById("tb1").innerHTML += `<tr><td colspan="3">Total items :`+ totalItems +`</td><td>Total Price : `+ totolPrice +`/-</td></tr>`
+    }
+    function placeOrder(){
+        localStorage.removeItem("countitems");
+    }
+    </script>
+ <!--   <script src="reviews.js"></script> -->
+ <!--   <script src="app.js"></script> -->
+    <script src="functions.js"></script>
+     <div class="footer">
+       <div class="last-call">
+       <div class="icons">
+         <img class="call-image" src="images/image 11.png" height="60px" width="60px"/>
+         <p class="p1"><b>Call</b> <br /> 03049260561</p>
+       </div>
+       <div class="icons2">
+           <img class="call-image2" src="images/image 12.png" width="60px" height="60px"/>
+           <p class="p2"><b>Contact</b><br /><a  id="email" href="mailto:shayanjob20@gmail.com">shayanjob20@gmail.com</a> </p>
+       </div>
+       <div>
+           <img class="call-image3" src="images/image 13.gif" height="60px" width="60px"/>
+           <p class="p3"><b>Follow me</b><br />
+            <a href="https://www.facebook.com"><img class="call-image4" src="images/image 16.png" /></a>
+            <a href="https://www.linkedin.com/m/login/"><img class="call-image5" src="images/image 15.png" alt=""/></a>
+            <a href="https://plus.google.com/u/0/collections/"><img class="call-image6" src="images/image 14.png" alt=""/></a>
+            </p>
+       </div>
+     </div>
+    </div>
+</body>
+</html>

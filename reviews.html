@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="reviews.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <script>
+        var imagecount = 1;
+        var totalimages = 4;
+
+        function slideright(x) {
+            var image = document.getElementById("img");
+            imagecount = imagecount + x;
+            if (imagecount > totalimages) imagecount = 1;
+            if (imagecount < 1) imagecount = totalimages;
+            image.src = "images/img" + imagecount + ".jpg";
+        }
+
+        function slideleft(x) {
+            var image = document.getElementById("img");
+            imagecount = imagecount + x;
+            if (imagecount > totalimages) imagecount = 1;
+            if (imagecount < 1) imagecount = totalimages;
+            image.src = "images/img" + imagecount + ".jpg";
+        }
+
+        setInterval(function slideA() {
+            var image = document.getElementById("img");
+            imagecount = imagecount + 1;
+            if (imagecount > totalimages) imagecount = 1;
+            if (imagecount < 1) imagecount = totalimages;
+            image.src = "images/img" + imagecount + ".jpg";
+        }, 5000);
+    </script>
+
+<div class="header">
+        <div class="logo">
+            <img src="images/car logo.png" />
+        </div>
+        <div>
+            <marquee>WELCOME TO MAXIMUS AUTO-SALES WEBSITE DEALS IN ALL KINDS OF CARS.</marquee>
+        </div>
+        <div class="list">
+            <ul class="list 2">
+                <li class="li2"><a class="li" href="index.html">HOME</a></li>
+                <li class="li2"><a class="li" href="about us.html">ABOUT US</a></li>
+                <li class="li2"><a class="li" href="reviews.html">REVIEWS</a></li>
+                <li class="li2"><a class="li" href="contact.html">CONTACT</a></li>
+                <li class="li2"><a class="li" href="cart.html" id="countitems" ><i class='fa fa-shopping-cart' aria-hidden='true'></i></a></li>            
+            </ul>
+        </div>
+</div>
+<div class="middle">
+    <div onclick="slideright(1);" class="fa fa-chevron-circle-left" id="rightarrow"></div>
+    <div onclick="slideleft(-1);" class="fa fa-chevron-circle-right" id="leftarrow"></div>
+    <div>
+        <img src="images/img1.jpg" class="big-img" id="img" />
+    </div>
+    <div class="honda">
+        <h1 class="honda-head"><img src="images/honda logo.jpg" width="40px" height="40px" align="top" /> Honda Cars</h1>
+    </div>
+    <div class="containor" id="carlist">
+        <ul>
+            <li>
+                <div class="box1">
+                    <div class="bar">
+                        <h3 class="heading">Honda Civic</h3>
+                    </div>
+                    <div class="nav-bar">
+                        <img class="image" src="images/honda civic.jpg" />
+                    </div>
+                    <div class="para">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quia, fugit. Vero laudantium molestiae ipsam accusamus
+                        est nobis aliquam ipsa alias culpa similique vel sit mollitia quo, voluptatum, reiciendis dolorem.
+                    </div>
+                    <div class="more">
+                        <h1 class="price">Rs:35,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(0)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(0)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box2">
+                    <div>
+                        <h3 class="heading2">Honda City</h3>
+                    </div>
+                    <div>
+                        <img src="images/honda city.jpg" class="image2" />
+                    </div>
+                    <div class="para2">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus fugiat ad voluptas error quisquam quo reprehenderit, assumenda!
+                        Sequi ipsum perspiciatis, odio sint nostrum, magnam vero est praesentium iure ea harum!
+                    </div>
+                    <div>
+                        <h1 class="price2">Rs:30,00,000</h1>
+                    </div>
+                   <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(1)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(1)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box3">
+                    <div>
+                        <h3 class="heading3">Honda Vezel</h3>
+                    </div>
+                    <div>
+                        <img src="images/honda vezel.jpg" class="image3" />
+                    </div>
+                    <div class="para3">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium vero suscipit optio accusantium placeat facilis rem,
+                        perferendis doloribus earum nostrum aperiam, ipsum delectus corrupti dolorum necessitatibus.
+                    </div>
+                    <div>
+                        <h1 class="price3">Rs:45,00,000</h1>
+                    </div>
+                    <div class="cartmargin">
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(2)" />
+                        <input  type="button" value="-" class="cartbutton" onclick="decrementItem(2)" ></button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box4">
+                    <div>
+                        <h3 class="heading4">Honda Accord</h3>
+                    </div>
+                    <div>
+                        <img src="images/honda accord.jpg" class="image4" />
+                    </div>
+                    <div class="para4">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, modi in eum fugiat cupiditate ipsa quo molestias laboriosam
+                        earum non consequatur temporibus. Et ullam quisquam exercitationem eius, sint quibusdam rerum.
+                    </div>
+                    <div>
+                        <h1 class="price4">Rs:30,00,000</h1>
+                    </div>
+                   <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(3)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(3)" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="toyota">
+        <h1 class="toyota-head"><img src="images/toyota logo.png" width="80px" height="40px" align="top" /> Toyota Cars</h1>
+    </div>
+    <div class="containor2">
+        <ul>
+            <li>
+                <div class="box5">
+                    <div>
+                        <h3 class="heading5">Toyota Corolla</h3>
+                    </div>
+                    <div>
+                        <img src="images/toyota corolla.jpg" class="image5" />
+                    </div>
+                    <div class="para5">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis tempora provident modi fugit eius id quaerat ipsam, esse
+                        officiis libero reiciendis incidunt, aliquid animi labore. Consequatur hic consectetur quos enim.
+                    </div>
+                    <div>
+                        <h1 class="price5">Rs:30,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(4)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(4)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box6">
+                    <div>
+                        <h3 class="heading6">Toyota Rav4</h3>
+                    </div>
+                    <div>
+                        <img src="images/toyota rav4.jpg" class="image6" />
+                    </div>
+                    <div class="para6">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat suscipit, officia. Libero, voluptatem, rem. Similique,
+                        pariatur facilis. Recusandae consectetur fugiat, praesentium voluptates quibusdam, quae architecto.
+                    </div>
+                    <div>
+                        <h1 class="price6">Rs:28,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(5)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(5)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box7">
+                    <div>
+                        <h3 class="heading7">Toyota LandCruiser</h3>
+                    </div>
+                    <div>
+                        <img src="images/toyota landcruiser.jpg" class="image7" />
+                    </div>
+                    <div class="para7">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique magni in quisquam repellat sed voluptates quod nobis
+                        ipsum unde, nostrum laudantium veritatis nesciunt nisi autem error vitae animi sit. Nam.
+                    </div>
+                    <div>
+                        <h1 class="price7">Rs:40,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(6)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(6)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box8">
+                    <div>
+                        <h3 class="heading8">Toyota Camry</h3>
+                    </div>
+                    <div>
+                        <img src="images/toyota camry.jpg" class="image8" />
+                    </div>
+                    <div class="para8">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic animi, vitae voluptate. Aperiam, explicabo. At nam eligendi
+                        ad, sint distinctio ipsam, cum earum, libero dolorem nemo debitis placeat hic est.
+                    </div>
+                    <div>
+                        <h1 class="price8">Rs:25,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(7)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(7)" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="suzuki">
+        <h1 class="suzuki-head"><img src="images/suzuki logo.png" height="40px" width="40px" align="top" /> Suzuki Cars</h1>
+    </div>
+    <div class="containor3">
+        <ul>
+            <li>
+                <div class="box9">
+                    <div>
+                        <h3 class="heading9">Suzuki Ciaz</h3>
+                    </div>
+                    <div>
+                        <img src="images/suzuki ciaz.jpg" class="image9" />
+                    </div>
+                    <div class="para9">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error harum facilis earum dolor dignissimos accusamus laboriosam,
+                        nihil veniam, quibusdam repudiandae sint eaque esse commodi illum voluptatum nemo omnis velit pariatur.
+                    </div>
+                    <div>
+                        <h1 class="price9">Rs:30,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(8)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(8)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box10">
+                    <div>
+                        <h3 class="heading10">Suzuki Swift</h3>
+                    </div>
+                    <div>
+                        <img src="images/suzuki swift.jpg" class="image10" />
+                    </div>
+                    <div class="para10">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo architecto eos dicta corporis ipsa velit consectetur consequuntur
+                        nam eius! Officia ex et suscipit laudantium ducimus laborum, commodi consectetur voluptas odio!
+                    </div>
+                    <div>
+                        <h1 class="price10">Rs:25,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(9)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(9)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box11">
+                    <div>
+                        <h3 class="heading11">Suzuki Celerio</h3>
+                    </div>
+                    <div>
+                        <img src="images/suzuki celerio.jpg" class="image11" />
+                    </div>
+                    <div class="para11">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores necessitatibus nihil amet ducimus, quasi fugiat magnam
+                        est repellendus eos vel! Ipsa omnis at, voluptas iure quaerat fuga animi ipsum autem!
+                    </div>
+                    <div>
+                        <h1 class="price11">Rs:30,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(10)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(10)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box12">
+                    <div>
+                        <h3 class="heading12">Suzuki SX4</h3>
+                    </div>
+                    <div>
+                        <img src="images/suzuki sx4.jpg" class="image12" />
+                    </div>
+                    <div class="para12">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas tempora minus, delectus soluta nesciunt quis expedita sed
+                        consequuntur consequatur hic corrupti magnam, labore, incidunt voluptates facere sunt odit? Quia,
+                        quisquam!
+                    </div>
+                    <div>
+                        <h1 class="price12">Rs:32,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(11)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(11)" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="mitisubishi">
+        <h1 class="mitisubishi-head"><img src="images/mitisubishi logo.png" width="40px" height="40px" align="top" /> Mitisubishi Cars</h1>
+    </div>
+    <div class="containor4">
+        <ul>
+            <li>
+                <div class="box13">
+                    <div>
+                        <h3 class="heading13">Mitisubishi Lancer</h3>
+                    </div>
+                    <div>
+                        <img src="images/mitsubishi lancer.jpg" class="image13" />
+                    </div>
+                    <div class="para13">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quibusdam ut corporis veritatis, harum quasi eligendi
+                        beatae, repudiandae sed qui, commodi at debitis laboriosam. Dolorum quisquam voluptatum in, saepe
+                        aut.
+                    </div>
+                    <div>
+                        <h1 class="price13">Rs:35,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(12)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(12)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box14">
+                    <div>
+                        <h3 class="heading14">Mitsubishi Eclipse</h3>
+                    </div>
+                    <div>
+                        <img src="images/mitsubishi eclipse.jpg" class="image14" />
+                    </div>
+                    <div class="para14">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quis fuga voluptates mollitia, soluta, sed eaque sit aspernatur
+                        excepturi nemo cupiditate commodi odio eius, consequuntur voluptate blanditiis facere officiis ipsam.
+                    </div>
+                    <div>
+                        <h1 class="price14">Rs:30,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(13)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(13)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box15">
+                    <div>
+                        <h3 class="heading15">Mitsubishi Pajero</h3>
+                    </div>
+                    <div>
+                        <img src="images/mitsubishi pajero.jpg" class="image15" />
+                    </div>
+                    <div class="para15">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident aut aliquam iste, reprehenderit, quis tempore sint amet
+                        quos dolorem molestias harum ipsam culpa maxime eaque consectetur libero atque earum enim.
+                    </div>
+                    <div>
+                        <h1 class="price15">Rs:40,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(14)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(14)" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box16">
+                    <div>
+                        <h3 class="heading16">Mitsubishi ASX</h3>
+                    </div>
+                    <div>
+                        <img src="images/mitsubishi asx.jpg" class="image16" />
+                    </div>
+                    <div class="para16">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt consectetur labore, harum magni aliquid ipsa accusamus,
+                        illo aut ipsum possimus voluptatum itaque culpa exercitationem fuga numquam amet vel modi aperiam!
+                    </div>
+                    <div>
+                        <h1 class="price16">Rs:26,00,000</h1>
+                    </div>
+                    <div>
+                        <input type="button" value="+" class="cartbutton" onclick="incrementItem(15)" />
+                        <input type="button" value="-" class="cartbutton" onclick="decrementItem(15)" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+    <div class="footer">
+        <div class="last-call">
+            <div class="icons">
+                <img class="call-image" src="images/image 11.png" height="60px" width="60px" />
+                <p class="p1"><b>Call</b> <br /> 03049260561</p>
+            </div>
+            <div class="icons2">
+                <img class="call-image2" src="images/image 12.png" width="60px" height="60px" />
+                <p class="p2"><b>Contact</b><br /><a id="email" href="mailto:shayanjob20@gmail.com">shayanjob20@gmail.com</a> </p>
+            </div>
+            <div>
+                <img class="call-image3" src="images/image 13.gif" height="60px" width="60px" />
+                <p class="p3"><b>Follow me</b><br />
+                    <a href="https://www.facebook.com"><img class="call-image4" src="images/image 16.png" /></a>
+                    <a href="https://www.linkedin.com/m/login/"><img class="call-image5" src="images/image 15.png" alt=""/></a>
+                    <a href="https://plus.google.com/u/0/collections/"><img class="call-image6" src="images/image 14.png" alt=""/></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="reviews.js"></script>
+    <script src="functions.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

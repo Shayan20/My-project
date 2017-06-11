@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="slideA();">
+    <script>
+        var imagecount = 1;
+        var totalimages = 4;
+
+        function slideright(x){
+                var image = document.getElementById("img"); 
+                imagecount = imagecount + x;
+                if (imagecount > totalimages) imagecount = 1;
+                if (imagecount < 1) imagecount = totalimages;
+                image.src = "images/img"+ imagecount +".jpg";       
+        }
+
+        function slideleft(x){
+                var image = document.getElementById("img"); 
+                imagecount = imagecount + x;
+                if (imagecount > totalimages) imagecount = 1;
+                if (imagecount < 1) imagecount = totalimages;
+                image.src = "images/img"+ imagecount +".jpg";      
+        }
+
+        setInterval(function slideA(){
+                var image = document.getElementById("img"); 
+                imagecount = imagecount + 1;
+                if (imagecount > totalimages) imagecount = 1;
+                if (imagecount < 1) imagecount = totalimages;
+                image.src = "images/img"+ imagecount +".jpg";       
+        },5000);
+    </script>
+    <div class="header">
+        <div class="logo">
+            <img src="images/car logo.png"/>
+        </div>
+        <div>
+            <marquee>WELCOME TO MAXIMUS AUTO-SALES WEBSITES DEALS IN ALL KINDS OF CARS.</marquee>
+        </div>
+        <div class="list">
+            <ul class="list 2">
+            <li class="li 2"><a class="li" href="index.html">HOME</a></li>
+            <li class="li 2"><a class="li" href="about us.html">ABOUT US</a></li>
+            <li class="li 2"><a class="li" href="reviews.html">REVIEWS</a></li>
+            <li class="li 2"><a class="li" href="contact.html">CONTACT</a></li>
+             <li class="li 2"><a class="li" href="cart.html" id="countitems" ><i class='fa fa-shopping-cart' aria-hidden='true'></i></a></li>
+            </ul>
+        </div>
+    </div>
+      <div onclick="slideright(1);" class="fa fa-chevron-circle-left" id="rightarrow"></div>
+      <div onclick="slideleft(-1);" class="fa fa-chevron-circle-right" id="leftarrow"></div>
+    <div class="container">
+        <img src="images/img1.jpg" id="img" width="100%" class="image"/>
+    </div>
+ <div class="whole">
+    <div class="head">
+        <center><h1>CONTACT</h1></center>
+        <center><img src="images/image 10.png" width="100px"/>
+    </div>
+    <div class="line">
+     <center><hr /></center>
+    </div>
+    <div class="head-nav">
+        <center>
+            <h2>We'd to help!</h2>
+            <p>We like to sale new branded Cars,for open-minded people.Feel free to say hello!</p>
+        </center>
+    </div>
+    <div>
+        <center>
+        <input type="text" name="username" placeholder="Your Name" class="form" id="usern" required="required"/>
+        <br />
+        <br />
+        <input type="email" name="email" placeholder="Email" class="form" id="usere" required="required" />
+        <br />
+        <br />
+        <textarea name="message" cols="20" rows="6" placeholder="Message" class="form1" id="userm" required="required" /></textarea>
+        <br />
+        <br />
+        <input type="button" value="Send" class="button" onclick="getvalues();"/>
+        </center>
+    </div>
+    <div class="line2">
+    <hr />
+    </div>
+    <h1 class="h-map">Our Location</h1>
+    <p class="h-map">You can also visit our Showroom</p>
+    <div class="map">
+       <center> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462848.7412751543!2d66.78450569720455!3d24.999919174640652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44555a0c23!2sKarachi%2C+Pakistan!5e0!3m2!1sen!2s!4v1496918502940" width="400" height="300" frameborder="0" style="border:1" ></iframe></center>
+    </div>
+</div>
+    <script>
+        var username = [];
+        var useremail = [];
+        var usermessage = [];
+        
+        function getvalues(){
+           var usern = document.getElementById("usern");
+           var userem = document.getElementById("usere");
+           var usermes = document.getElementById("userm");
+             username.push(usern.value);
+             useremail.push(userem.value);
+             usermessage.push(usermes.value);
+            usern.value = "";
+            userem.value = "";
+            usermes.value = "";  
+        testingfeildvalues();
+        }
+
+        function testingfeildvalues(){
+               if (username == ""){
+                   alert("Please fill this text feilds");
+               }
+               else if (useremail == ""){
+                   alert("please fill out this email feild");  
+               }
+               else if (usermessage == ""){
+                   alert("please fill out message feilds"); 
+               }
+               else{
+                alert("Thanks for giving your feedbacks");
+                localStorage.setItem('text',username);
+                localStorage.setItem('email',useremail);
+                localStorage.setItem('message',usermessage);
+               }           
+        }
+    </script>
+     <div class="footer">
+       <div class="last-call">
+       <div class="icons">
+         <img class="call-image" src="images/image 11.png" height="60px" width="60px"/>
+         <p class="p1"><b>Call</b> <br /> 03049260561</p>
+       </div>
+       <div class="icons2">
+           <img class="call-image2" src="images/image 12.png" width="60px" height="60px"/>
+           <p class="p2"><b>Contact</b><br /><a  id="email" href="mailto:Daemonstar20@yahoo.com">shayanjob20@gmail.com</a> </p>
+       </div>
+       <div class="icons3">
+           <img class="call-image3" src="images/image 13.gif" height="60px" width="60px"/>
+           <p class="p3"><b>Follow me</b><br />
+            <a href="https://www.facebook.com/"><img class="call-image4" src="images/image 16.png" /></a>
+            <a href="https://www.linkedin.com/m/login/"><img class="call-image5" src="images/image 15.png" alt=""/></a>
+            <a href="https://plus.google.com/u/0/collections/"><img class="call-image6" src="images/image 14.png" alt=""/></a>
+            </p>
+       </div>
+     </div>
+    </div>
+</body>
+</html>
